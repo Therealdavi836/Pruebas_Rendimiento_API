@@ -2,19 +2,19 @@
 #Importamos a locust
 from locust import HttpUser, task
 
-# --------------- Locust Test Flask ----------------- #
+# --------------- Locust Test Laravel ----------------- #
 class SimpleProduct(HttpUser):
 
     #Prueba de metodo get de todos los productos de la API flask
     @task
     def get_product(self):
-        self.client.get('/products')
-    
+        self.client.get('/api/products')
+
     #Prueba de metodo get devolviendo un solo producto
     @task
     def get_single_product(self):
-        self.client.get('/products/1')
-    
+        self.client.get('/api/products/1')
+
     #Prueba de metodo post enviando un producto
     @task
     def create_product(self):
@@ -25,8 +25,8 @@ class SimpleProduct(HttpUser):
             "category": "string",
             "image": "http://example.com"
         }
-        self.client.post('/products', json=data)
-    
+        self.client.post('/api/products', json=data)
+
     #Prueba de metodo put actualizando un producto
     @task
     def update_product(self):
@@ -38,9 +38,9 @@ class SimpleProduct(HttpUser):
             "category": "string",
             "image": "http://example.com"
         }
-        self.client.put('/products/1', json=data)
-    
+        self.client.put('/api/products/1', json=data)
+
     #Prueba de metodo delete borrando un producto
     @task
     def delete_product(self):
-        self.client.delete('/products/1')
+        self.client.delete('/api/products/1')
