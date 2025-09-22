@@ -35,7 +35,7 @@ El objetivo principal de este repositorio es comparar el rendimiento entre dos i
 Para ejecutar las pruebas con Locust en cada API, debes instalar Locust y luego ejecutar el comando correspondiente dentro del subdirectorio deseado:
 
 ```bash
-locust -f locustfile.py
+locust -f locustfile.py --host:<Ip del servidor a levantar sea Flask o Laravel>
 ```
 
 Esto abrirá una interfaz web para configurar el número de usuarios simulados y el hatch rate.
@@ -43,3 +43,4 @@ Esto abrirá una interfaz web para configurar el número de usuarios simulados y
 ## Créditos
 
 Este repositorio es una práctica personal de pruebas de rendimiento sobre APIs REST desarrolladas en Flask y Laravel para el curso de Ingeniería de Software ll.
+Enlace al informe generado sobre pruebas de rendimiento: https://docs.google.com/document/d/194trDkczzaZs1k5xWzUQy7m__vdt5nJSl2M2GY635Dw/edit?usp=sharing
